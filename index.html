@@ -8,21 +8,41 @@
     </head>
 
     <body>
+        <!-- 상단 상태바 -->
+        <div class="status-bar">
+            <div class="left">
+                <div class="time" id="time"></div>
+                <div class="date" id="date"></div>
+            </div>
+            <div class="right">
+                <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/cb4bf88495bcfdf5229d2681e9969be5ddf21a5dc8445c25b5a5295f1c275a14?"
+                class="network-icon"/>
+                <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/bb187c6557d14c8692c554d3f1eaa6ffed44cb0260074b5c625c3e15f8da5698?"
+                class="wifi-icon"/>
+                <div class="battery">100%</div>
+                <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/c7e27bf1b919bf240d4ef9da4cafcc862bc2389547735aa489542f4c2ee0b07e?"
+                class="battery-icon"/>
+            </div>
+        </div>
         <div class="container">
             <!-- 카테고리바 -->
             <div class="category-bar" id="categoryBar">
-                카테고리바
             </div>
             
             <!-- 사이드바 -->
             <div class="sidebar">
-                <div class="toggle-btn"><button onclick="toggleCategoryBar()">&#60;폴더</button></div>
-                사이드바
+                <div class="toggle-btn"><button onclick="toggleCategoryBar()">&#60;폴더</button></div>        
+                </div>
             </div>
             
             <!-- 본문 -->
             <div class="posts">
-                본문
             </div>
         </div>
 
