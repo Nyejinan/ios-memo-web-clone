@@ -7,7 +7,27 @@ function toggleDarkMode() {
     }
 }
 function toggleCategoryBar() {
-    document.body.classList.toggle('active');   // '<폴더' 버튼 누르면 active on -> 카테고리바 보임
+    // 현재 body 태그의 category-bar 속성 값을 가져옵니다.
+    var categoryBarStatus = document.body.getAttribute('category-bar');
+    
+    // category-bar 속성 값에 따라 토글합니다.
+    if (categoryBarStatus === 'on') {
+        document.body.setAttribute('category-bar', 'off');
+    } else {
+        document.body.setAttribute('category-bar', 'on');
+    }
+}
+
+function toggleSideBar() {
+    // 현재 body 태그의 side-bar 속성 값을 가져옵니다.
+    var sideBarStatus = document.body.getAttribute('side-bar');
+    
+    // category-bar 속성 값에 따라 토글합니다.
+    if (sideBarStatus === 'off') {
+        document.body.setAttribute('side-bar', 'on');
+    } else {
+        document.body.setAttribute('side-bar', 'off');
+    }
 }
 
 function showTime() {

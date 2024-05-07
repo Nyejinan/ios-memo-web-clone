@@ -11,6 +11,10 @@ body, html {
     font-family: "SF Pro", sans-serif;
 }
 
+.container {
+    display: flex;
+}
+
 button{
     border: none;
     outline: none;
@@ -312,40 +316,56 @@ button{
     color: white;
 }
 
-/* 카테고리바 on일 때 (active 클래스 on될 때) 변화 */
-body.active .category-bar {
-    transform: translateX(0%);
-}
-body.active .side-bar {
-    margin-left: 20%;
-}
-
 /* 사이드바 */
 .side-bar {
     background-color: lightcoral;
     width: 20%;
 
-    position: fixed; /* 버튼 위치를 위해 relative 설정 */
+    position: relative; /* 버튼 위치를 위해 relative 설정 */
     transition: margin 0.5s ease;
     z-index: 1;
 
     overflow: auto; 
 }
 
-
 /* 본문 */
 .posts {
-    background-color: #cccccc;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
     flex-grow: 1;
+    background-color: #cccccc;
     transition: margin 0.5s ease;
-    overflow-y: auto; /* 세로 방향으로 내용이 넘칠 때 스크롤 바가 생기도록 설정 */
+    overflow-y: auto; /* 세로 방향으로 내용이 넘칠 때 스크롤 바가 생기도록 설정 */ 
 }
-.toggle-btn {
+
+
+.categorybar-btn {
     position: absolute;
     top: 10px;
     left: 10px;
 }
 
+.sidebar-btn {
+    position: absolute;
+    margin-top: 100px;
+}
+
+/* 카테고리바 on일 때 변화 */
+body[category-bar="on"] .category-bar {
+    transform: translateX(0%);
+}
+body[category-bar="on"] .side-bar {
+    margin-left: 20%;
+}
+
+/* 사이드바 off일 때 변화 */
+body[side-bar="off"] .side-bar {
+    margin-left: -20%;
+}
+body[side-bar="off"] .posts {
+    width: 120%; /* 너비를 120%로 조정 */
+}
 
 /* 다크 모드 */
 body.dark-mode .status-bar
