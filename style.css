@@ -28,7 +28,6 @@ button{
     z-index: 9999;
     height: 24px;
     width: 100%;
-    background-color: white;
     padding: 0 15px;
     align-items: center;
     justify-content: space-between;
@@ -115,7 +114,7 @@ button{
     display: flex;
     width: 100%;
     flex-direction: column;
-    padding: 27px 16px 4px;
+    padding: 24px 16px 4px;
 }
 .category-bar .section-1 .dark-mode {
     align-items: start;
@@ -139,7 +138,7 @@ button{
     display: inline-flex;
     
     color: black;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 41px;
     word-wrap: break-word

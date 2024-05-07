@@ -27,6 +27,7 @@ function toggleSideBar() {
         document.body.setAttribute('side-bar', 'on');
     } else {
         document.body.setAttribute('side-bar', 'off');
+        document.body.setAttribute('category-bar', 'off');
     }
 }
 
