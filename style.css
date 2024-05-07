@@ -11,10 +11,6 @@ body, html {
     font-family: "SF Pro", sans-serif;
 }
 
-.container {
-    display: flex;
-}
-
 button{
     border: none;
     outline: none;
@@ -97,7 +93,6 @@ button{
 .category-bar {
     box-shadow: 0.5px 0px 0px 0px rgba(60, 60, 67, 0.36);
     background-color: #f2f2f7;
-    display: flex;
     padding-bottom: 80px;
     flex-direction: column;
     margin: 0 auto;
@@ -105,7 +100,7 @@ button{
     width: 20%;
     position: fixed;
     transform: translateX(-100%);
-    transition: transform 0.5s ease;
+    transition: 0.5s ease;
 
     overflow-y: auto;
 }
@@ -320,8 +315,8 @@ button{
     background-color: lightcoral;
     width: 20%;
 
-    position: relative; /* 버튼 위치를 위해 relative 설정 */
-    transition: margin 0.5s ease;
+    position: fixed;
+    transition: 0.5s ease;
     z-index: 1;
 
     overflow: auto; 
@@ -329,13 +324,14 @@ button{
 
 /* 본문 */
 .posts {
-    display: inline-flex;
+    position: relative;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    flex-grow: 1;
     background-color: #cccccc;
-    transition: margin 0.5s ease;
+    transition: 0.5s ease;
     overflow-y: auto; /* 세로 방향으로 내용이 넘칠 때 스크롤 바가 생기도록 설정 */ 
+    left: 20%; width: 80%;
 }
 
 
@@ -355,15 +351,18 @@ body[category-bar="on"] .category-bar {
     transform: translateX(0%);
 }
 body[category-bar="on"] .side-bar {
-    margin-left: 20%;
+    transform: translateX(100%);
+}
+body[category-bar="on"] .posts {
+    left: 40%; width: 60%;
 }
 
 /* 사이드바 off일 때 변화 */
 body[side-bar="off"] .side-bar {
-    margin-left: -20%;
+    transform: translateX(-100%);
 }
 body[side-bar="off"] .posts {
-    width: 120%; /* 너비를 120%로 조정 */
+    left: 0%; width: 100%;
 }
 
 /* 다크 모드 */
