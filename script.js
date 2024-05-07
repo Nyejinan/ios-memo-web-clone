@@ -1,3 +1,11 @@
+function toggleDarkMode() {
+    if(document.querySelector('body').classList.contains('dark-mode')){
+        document.body.classList.remove("dark-mode");
+    }
+    else{
+        document.body.classList.add("dark-mode");
+    }
+}
 function toggleCategoryBar() {
     document.body.classList.toggle('active');   // '<폴더' 버튼 누르면 active on -> 카테고리바 보임
 }
@@ -29,3 +37,33 @@ function showTime() {
 window.onload = function() {
     showTime();
 };
+
+// disclosure 버튼 누르면 카테고리 접고 펴기
+// 모든 '.group' 요소에 대해 이벤트 리스너를 추가
+document.querySelectorAll('.group').forEach(function(group) {
+    // 마우스가 영역 위로 이동할 때
+    group.addEventListener('mouseover', function() {
+        // 현재 '.group' 요소 내에서 '.indent-2s'를 찾음
+        const indent2s = group.querySelector('.indent-2s');
+        const disclosure = group.querySelector('.disclosure-img');
+        if (indent2s) { // '.indent-2s' 요소가 존재하는지 확인
+            const scrollHeight = indent2s.scrollHeight + "px"; // 실제 높이를 계산
+            indent2s.style.height = scrollHeight; // 실제 높이로 설정
+            indent2s.style.opacity = 1;
+            disclosure.setAttribute('src', 'images/closure.svg');
+        }
+
+
+    });
+    
+    // 마우스가 영역을 벗어날 때
+    group.addEventListener('mouseout', function() {
+        const indent2s = group.querySelector('.indent-2s');
+        const disclosure = group.querySelector('.disclosure-img');
+        if (indent2s) { // '.indent-2s' 요소가 존재하는지 확인
+            indent2s.style.height = "0"; // 높이를 0으로 설정하여 숨김
+            indent2s.style.opacity = 0;
+            disclosure.setAttribute('src', 'images/disclosure.svg');
+        }
+    });
+});

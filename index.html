@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
 <html lang="ko">
     <head>
         <meta charset="UTF-8">
@@ -17,30 +18,141 @@
             <div class="right">
                 <img
                 loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/cb4bf88495bcfdf5229d2681e9969be5ddf21a5dc8445c25b5a5295f1c275a14?"
-                class="network-icon"/>
+                srcset="images\network.svg"
+                class="network" />
                 <img
                 loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/bb187c6557d14c8692c554d3f1eaa6ffed44cb0260074b5c625c3e15f8da5698?"
-                class="wifi-icon"/>
-                <div class="battery">100%</div>
+                srcset="images\wifi.svg"
+                class="network" />
+                <div class="wifi">100%</div>
                 <img
                 loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/c7e27bf1b919bf240d4ef9da4cafcc862bc2389547735aa489542f4c2ee0b07e?"
-                class="battery-icon"/>
+                srcset="images\battery.svg"
+                class="battery" />
             </div>
         </div>
         <div class="container">
             <!-- 카테고리바 -->
             <div class="category-bar" id="category-bar">
-                <div class="navigation-bar">     <!-- 내비게이션 바 -->
-                    <div class="dark-mode">
-                        <img
-                            loading="lazy"
-                            srcset="img\moon-img.png"
-                            class="moon-image" />
+                <div class="section-1">     <!-- 내비게이션 바 -->
+                    <div class="dark-mode"><button onclick="toggleDarkMode()">       
+                            <img
+                                loading="lazy"
+                                srcset="images\moon.svg"
+                                class="moon-img" />
+                        </button>
                     </div>
                     <div class="title">Folders</div>
+                </div>
+                <div class="section-2">     <!-- Notice -->
+                    <div class = "header">
+                        <div class="title">Notice</div>
+                    </div>
+                </div>
+                <div class="section-3">     <!-- Study -->
+                    <div class="header">
+                        <div class="title">Study</div>
+                    </div>
+                    <div class="group">
+                        <div class="indent-1">
+                            <div class="leading">
+                                <img class="folder-img" loading="lazy" srcset="images\folder.svg"/>
+                                <div class="title">컴퓨터과학</div>
+                            </div>
+                            <img class="disclosure-img" loading="lazy" srcset="images\disclosure.svg">
+                        </div>
+                        <div class="indent-2s">
+                            <div class="indent-2">
+                                <div class="leading">
+                                    <img class="folder-img" loading="lazy" srcset="images\folder.svg"/>
+                                    <div class="title">자료구조</div>
+                                </div>
+                                <div class="detail">4</div>
+                            </div>
+                            <div class="indent-2">
+                                <div class="leading">
+                                    <img class="folder-img" loading="lazy" srcset="images\folder.svg"/>
+                                    <div class="title">알고리즘</div>
+                                </div>
+                                <div class="detail">16</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="indent-1">
+                            <div class="leading">
+                                <img class="folder-img" loading="lazy" srcset="images\folder.svg"/>
+                                <div class="title">웹개발</div>
+                            </div>
+                            <img class="disclosure-img" loading="lazy" srcset="images\disclosure.svg"/>
+                        </div>
+                        <div class="indent-2s">
+                            <div class="indent-2">
+                                <div class="leading">
+                                    <img class="folder-img" loading="lazy" srcset="images\folder.svg"/>
+                                    <div class="title">HTML</div>
+                                </div>
+                                <div class="detail">4</div>
+                            </div>
+                            <div class="indent-2">
+                                <div class="leading">
+                                    <img class="folder-img" loading="lazy" srcset="images\folder.svg"/>
+                                    <div class="title">CSS</div>
+                                </div>
+                                <div class="detail">16</div>
+                            </div>
+                            <div class="indent-2">
+                                <div class="leading">
+                                    <img class="folder-img" loading="lazy" srcset="images\folder.svg"/>
+                                    <div class="title">JavaScript</div>
+                                </div>
+                                <div class="detail">16</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="indent-1">
+                            <div class="leading">
+                                <img class="folder-img" loading="lazy" srcset="images\folder.svg"/>
+                                <div class="title">코딩테스트</div>
+                            </div>
+                            <img class="disclosure-img" loading="lazy" srcset="images\disclosure.svg"/>
+                        </div>
+                        <div class="indent-2s">
+                            <div class="indent-2">
+                                <div class="leading">
+                                    <img class="folder-img" loading="lazy" srcset="images\folder.svg"/>
+                                    <div class="title">Python</div>
+                                </div>
+                                <div class="detail">4</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="indent-1">
+                            <div class="leading">
+                                <img class="folder-img" loading="lazy" srcset="images\folder.svg"/>
+                                <div class="title">기타</div>
+                            </div>
+                            <img class="disclosure-img" loading="lazy" srcset="images\disclosure.svg"/>
+                        </div>
+                        <div class="indent-2s">
+                            <div class="indent-2">
+                                <div class="leading">
+                                    <img class="folder-img" loading="lazy" srcset="images\folder.svg"/>
+                                    <div class="title">학교</div>
+                                </div>
+                                <div class="detail">4</div>
+                            </div>
+                            <div class="indent-2">
+                                <div class="leading">
+                                    <img class="folder-img" loading="lazy" srcset="images\folder.svg"/>
+                                    <div class="title">정보</div>
+                                </div>
+                                <div class="detail">16</div>
+                            </div>
+                            </div>
+                    </div>
                 </div>
             </div>
             
