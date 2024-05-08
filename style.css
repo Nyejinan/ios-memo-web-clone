@@ -38,14 +38,14 @@ button{
         flex-wrap: wrap;
     }
 }
-.left {
+.status-bar .left {
     justify-content: flex-start;
     align-items: center;
     gap: 8px;
     display: flex;
     padding: 2px 0;
 }
-.right {
+.status-bar .right {
     display: flex;
     gap: 4px;
     white-space: nowrap;
@@ -528,15 +528,31 @@ button{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #cccccc;
+    background-color: #FFF;
     transition: 0.5s ease;
     overflow-y: auto; /* 세로 방향으로 내용이 넘칠 때 스크롤 바가 생기도록 설정 */ 
     left: 25%; width: 75%;
 }
-
-.sidebar-btn {
-    position: absolute;
-    margin-top: 100px;
+.posts .section-1 {
+    display: flex;
+    padding: 35px 16px 11px 16px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+.posts .section-1 .left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.posts .section-1 .right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 19px;
+}
+.posts .section-1 .left * , .posts .section-1 .right * {
+    height: 23px;
 }
 
 /* 카테고리바 on일 때 변화 */

@@ -9,7 +9,7 @@ function toggleDarkMode() {
 function toggleCategoryBar() {
     // 현재 body 태그의 category-bar 속성 값을 가져옵니다.
     var categoryBarStatus = document.body.getAttribute('category-bar');
-    
+
     // category-bar 속성 값에 따라 토글합니다.
     if (categoryBarStatus === 'on') {
         document.body.setAttribute('category-bar', 'off');
@@ -21,13 +21,17 @@ function toggleCategoryBar() {
 function toggleSideBar() {
     // 현재 body 태그의 side-bar 속성 값을 가져옵니다.
     var sideBarStatus = document.body.getAttribute('side-bar');
-    
+    const expand = document.querySelector('.expand-img');
+
     // category-bar 속성 값에 따라 토글합니다.
     if (sideBarStatus === 'off') {
         document.body.setAttribute('side-bar', 'on');
+        expand.setAttribute('srcset', 'images/expand.svg');
+
     } else {
         document.body.setAttribute('side-bar', 'off');
         document.body.setAttribute('category-bar', 'off');
+        expand.setAttribute('srcset', 'images/contract.svg');
     }
 }
 
@@ -71,10 +75,8 @@ document.querySelectorAll('.group').forEach(function(group) {
             const scrollHeight = indent2s.scrollHeight + "px"; // 실제 높이를 계산
             indent2s.style.height = scrollHeight; // 실제 높이로 설정
             indent2s.style.opacity = 1;
-            disclosure.setAttribute('src', 'images/closure.svg');
+            disclosure.setAttribute('srcset', 'images/closure.svg');
         }
-
-
     });
     
     // 마우스가 영역을 벗어날 때
@@ -84,7 +86,7 @@ document.querySelectorAll('.group').forEach(function(group) {
         if (indent2s) { // '.indent-2s' 요소가 존재하는지 확인
             indent2s.style.height = "0"; // 높이를 0으로 설정하여 숨김
             indent2s.style.opacity = 0;
-            disclosure.setAttribute('src', 'images/disclosure.svg');
+            disclosure.setAttribute('srcset', 'images/disclosure.svg');
         }
     });
 });
