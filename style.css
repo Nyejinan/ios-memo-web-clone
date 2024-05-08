@@ -79,12 +79,6 @@ button{
     align-self: start;
 }
 
-
-.container {
-    display: flex;
-    height: 100%;
-}
-
 .category-bar, .side-bar, .posts {
     height: 100vh;
 }
@@ -172,18 +166,18 @@ button{
 .category-bar .section-3 {
     display: flex;
     padding-bottom: 12px;
+    margin-top: 10px;
     flex-direction: column;
     align-items: flex-start;
     align-self: stretch;
 }
 
 /* header와 첫 번째 group 사이의 간격 조정 */
-.section-3 .header{
-    margin-top: 0px;
-    margin-bottom: 0px; /* 원하는 간격으로 조정 */
+.category-bar .section-3 .header{
+    margin-bottom: -10px; /* 원하는 간격으로 조정 */
 }
 /* 그 외 group 요소들 사이의 기본 간격을 설정하고 싶다면 */
-.section-3 .group {
+.category-bar .section-3 .group {
     margin-top: 7px;
     margin-bottom: 7px; /* group 요소들 사이의 간격을 원하는 값으로 설정 */
 }
@@ -392,6 +386,80 @@ button{
     font-weight: 400;
     line-height: 22px; /* 129.412% */
     letter-spacing: -0.4px;
+}
+
+.side-bar .section-3 {
+    margin: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    flex-wrap: wrap;
+    
+    overflow: hidden;
+    border-radius: 10px;
+    gap: 10px;
+    flex-shrink: 0;
+}
+.post-list{
+    padding: 0px 15px;
+    height: 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    align-self: stretch;
+
+    width: 100%; /* 필요에 따라 조정 */
+    box-sizing: border-box; /* 패딩과 보더가 너비에 포함되도록 설정 */
+
+    background: #FFFFFF;
+}
+.post-list .title {
+    align-self: stretch;
+
+    color: black;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 22px; /* 122.222% */
+    letter-spacing: -0.43px;
+    
+    text-overflow: ellipsis;
+    flex-wrap: wrap;
+    overflow: hidden;
+    white-space:nowrap;
+
+    max-width: 100%; /* .post-list의 너비를 넘지 않도록 설정 */
+    box-sizing: border-box; /* 패딩과 보더가 너비에 포함되도록 설정 */
+}
+.post-list .content {
+    display: flex;
+    align-items: flex-start;
+    gap: 5%;
+    align-self: stretch;
+}
+.post-list .content .date, .post-list .content .subtitle {
+    color: rgba(60, 60, 67, 0.60);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px; /* 111.111% */
+    letter-spacing: -0.23px;
+
+    text-overflow: ellipsis;
+    flex-wrap: wrap;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.post-list .content .subtitle {
+    flex: 1 0 0;
+    flex-shrink: 1;
+
+    max-width: 100%; /* .post-list의 너비를 넘지 않도록 설정 */
+    box-sizing: border-box; /* 패딩과 보더가 너비에 포함되도록 설정 */
 }
 
 /* 본문 */
