@@ -80,6 +80,17 @@ button{
     width: 26px;
     align-self: start;
 }
+.window-grabber {
+    display: inline-flex;
+    padding: 9.5px;
+    align-items: flex-start;
+    gap: 3px;
+}
+.window-grabber * {
+    width: 5px;
+    height: 5px;
+}
+
 
 .category-bar, .side-bar, .posts {
     height: 100vh;
