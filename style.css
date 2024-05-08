@@ -540,8 +540,10 @@ button{
     left: 25%; width: 75%;
 }
 .posts .section-1 {
-    
-    display: inline-flex;
+    position: sticky;
+    top: 0; /* 상단에 고정 */
+
+    display: flex;
     padding: 35px 16px 11px 16px;
     justify-content: space-between;
     align-items: center;
